@@ -1,0 +1,808 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-size: 14px;
+    overflow-x: hidden;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Styling Of Header Start From Here */
+
+header{
+    height: auto;
+    display: flex;
+    padding: 10px;
+    color: white;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    font-family: sans-serif;
+    background-color: #316DC3;
+    justify-content: space-evenly;
+}
+
+header p{
+    margin: 5px;
+    word-spacing: 2px;
+    text-align: center;
+}   
+
+/* Styling The Donate Buttons */
+
+header>div.btnContainer button{
+    padding: 5px;
+    font-size: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+header>div.btnContainer button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* NavBAr Container Styling */
+
+.navContainer{
+    z-index: 1;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: white;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 1px 0px #000;
+}
+
+.navContainer>img{
+    width: 200px;
+}
+#menuIco{
+    display: none;
+    transition: all 0.2s linear;
+}
+#menuIco:hover{
+    opacity: 0.6;
+}
+/* Nav Bar Styling */
+nav>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav>ul>li{
+    list-style: none;
+    text-align: center;
+}
+nav>ul>li>a{
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+nav>ul>li>a.active , nav>ul>li>a:hover{
+    color: #fff;
+    background-color: #316DC3;
+    transition: background-color 0.5s linear;
+}
+
+/* About , services , future Styling */
+
+.about , .services , .future , .donation , .traning , .edcation , .medical ,.welfare ,.online{
+    position: relative;
+}
+.innerAbout li, .innerServices li, .innerFuture li, .innerDonation li, .innerEducation li , .innerTraning li, .innerMedical li , .innerOnline li{
+    height: 28px;
+    list-style: none !important;
+}
+.innerAbout , .innerServices , .innerFuture , .innerDonation , .innerEducation , .innerMedical , .innerWelfare , .innerOnline{
+    top: 44px;
+    height: 0px;
+    width: 160px;
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    background-color: #fff;
+    transition: height 0.5s ease-in-out;
+}
+.innerAbout a , .innerServices a , .innerServices>li:first-child , .innerEducation>li:first-child , .innerFuture a , .innerDonation a , .innerEducation a , .innerTraning a , .medical , .innerMedical a ,.welfare , .innerWelfare a , .online , .innerOnline a{
+    padding: 7px;
+    height: 28px;    
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 10px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100% !important;
+}
+.innerAbout a:hover , .innerServices a:hover , .innerServices>li:first-child:hover, .innerEducation>li:first-child:hover , .innerFuture a:hover , .innerDonation a:hover , .innerEducation a:hover , .innerTraning a:hover , .innerMedical a:hover , .medical:hover , .welfare:hover , .innerWelfare a:hover , .online:hover , .innerOnline a:hover{
+    color: #fff;
+    padding-left: 20px;
+    background-color: #316DC3;
+    transition: padding 0.3s linear;
+}
+
+/* Show About Option On Hover */
+
+.about:hover .innerAbout{
+    height: 84px !important;
+}
+.services:hover .innerServices li{
+    visibility: visible;
+}
+
+
+/* Starting Of DropDown of Services */
+.innerServices{
+    width: 200px;
+}
+.innerServices:hover , .innerEducation:hover{
+    overflow: visible !important;
+}
+.services:hover .innerServices{
+    height: 336px !important;
+}
+/* End Of DropDown of Services */
+
+
+/* Show Futre DropDown On Hover */
+.future:hover .innerFuture{
+    height: 56px !important;
+}
+/* End Of DropDown of Future */
+
+/* Show Donation  DropDown on Hover*/
+.donation:hover .innerDonation{
+    height: 140px !important;
+}
+
+
+/* Eduction DopDown */
+.innerEducation , .innerTraning , .innerMedical , .innerWelfare , .innerOnline{
+    z-index: -1;
+    width: 220px;
+    top: 0 !important;
+}
+.innerTraning{
+    left: 221px;
+    height: 0px;
+    width: 160px;
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    background-color: #fff;
+    transition: 0.5s ease-in-out;
+}
+.education:hover .innerEducation{
+    z-index: 1;
+    left: 201px;
+    height: 84px;
+    /* transition: 0.5s ease-in-out; */
+}
+.medical:hover .innerMedical{
+    z-index: 1;
+    left: 201px;
+    height: 84px;
+    /* transition: 0.5s ease-in-out; */
+}
+.welfare:hover .innerWelfare{
+    z-index: 1;
+    left: 201px;
+    height: 56px;
+    /* transition: 0.5s ease-in-out; */
+}
+.online:hover .innerOnline{
+    z-index: 1;
+    left: 201px;
+    height: 84px;
+    /* transition: 0.5s ease-in-out; */
+}
+.traning:hover .innerTraning{
+    z-index: 1;
+    left: 221px;
+    height: 112px;
+}
+
+/* Mobile NavBar */
+.showNav{
+    display: block !important;
+}
+#mobileNav{
+    top: 68px;
+    width: 99%;
+    height: 287px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: #ffffff;
+}
+#mobileNav>ul{
+    display: flex;
+    overflow: auto;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+}
+#mobileNav>ul>li{
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.3s ease-in-out;
+}
+#mobileNav>ul>li:hover{
+    color: white;
+    background-color: #316DC3;
+}
+#innerAbout , #innerServices, #innerFuture{
+    transition: 0.5s ease-in-out;    
+}
+#about:hover #innerAbout , #future:hover #innerFuture{
+    height: 90px;
+    color: black;
+    margin-top: 5px;
+}
+#services:hover #innerServices{
+    height: 450px;
+    overflow: auto;
+    color: black;
+}
+#innerAbout li:hover ,#innerServices li:hover , #innerFuture li:hover{
+    color: white;
+    background-color: #316DC3;
+}
+#innerAbout , #innerServices , #innerFuture{
+    height: 0px;
+    display: flex;
+    overflow: hidden;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;    
+}
+#innerAbout>li , #innerServices>li , #innerFuture>li{
+    padding: 10px;
+}
+
+/* Slider Styling */
+
+.sliderTimer{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    box-shadow: 0px 0px 2px 0px rgb(217, 217, 217);
+}
+.sliderTimer div#timer{
+    width: 0px;
+    height: 100%;
+    background-color: slategray;
+}
+
+#slider{
+    width: 100vw;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#slider:hover #leftBtn, #slider:hover #rightBtn{
+    visibility: visible;
+}
+#slider>div{
+    width: 100px;
+    height: 460px;    
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center
+}
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
+}
+#leftBtn , #rightBtn{
+    width: 60px;
+    height: 60px;
+    visibility: hidden;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.6s;
+    transform: scale(0.8);  
+    background: rgb(255, 255, 255); 
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.74);
+}
+#leftBtn:hover , #rightBtn:hover{ 
+    transform: scale(1);
+}
+#leftBtn::after , #rightBtn::after{
+    content: '<';
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    color: #316DC3;
+    font-family: monospace;
+    transform: translate(-50%,-50%);
+}
+#rightBtn::after{
+    content: '>';
+}
+/* News Marquee */
+.newContainer{
+    width: 90%; 
+    margin: 10px; 
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 5px;
+    background-color: royalblue; 
+    box-shadow: 0px 0px 5px 0px #fff inset;
+}
+.newContainer marquee{
+    color: white; 
+    font-family: 'Open Sans', sans-serif;
+}
+.newContainer marquee span{
+    color: black; 
+    font-weight: bold;
+}
+.newContainer marquee span b{
+    color: maroon; 
+    font-size: larger;
+}
+.newContainer marquee a{
+    color: lime;
+}
+
+/* Into Container */
+
+.intoContainer , .doingContainer , .imgGallery{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f8fa;
+}
+.intoContainer .intoHead , .doingHead , .imgHead{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.intoContainer .intoHead>div>h1 , .doingContainer .doingHead>div>h1 , .imgGallery .imgHead>div>h1{
+    color: green;
+    font-size: 40px;
+    font-weight: 100;
+}
+.intoContainer .intoHead>div>h1>img , .doingContainer .doingHead>div>h1>img , .imgGallery .imgHead>div>h1>img{
+    width: 38px;
+    vertical-align: middle;
+}
+.intoContainer .intoBody{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center
+}
+.intoContainer .intoBody p{
+    width: 70%;
+    margin: 15px;
+    padding: 5px;
+    font-size: 100%;
+    color: #666666;
+    line-height: 20px;
+    text-align: justify;
+}
+.intoBody>p#last{
+    margin-bottom: 60px;
+}
+
+
+/* count Info Container */
+
+.countInfoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #316DC3;
+}
+.countInfoContainer>div>img{
+    width: 35px;
+    margin: 5px;
+}
+.countInfoContainer>div{
+    width: 335px;
+    padding: 20px;
+    height: 250px;
+    display: flex;
+    color: white;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #316DC3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.countInfoContainer>div>h1{
+    margin: 5px;
+}
+.countInfoContainer>div>p{
+    margin: 5px;
+    font-size: small;
+}
+
+/* What We Are Doing Container */
+
+.doingBody{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.doingBody .card{
+    width: 350px;
+    margin: 20px;
+    height: 180px;
+    display: flex;
+    cursor: pointer;
+    color: #316DC3;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow:  0px 0px 1px 0px rgba(0, 0, 0, 0.185) ,0px 0px 20px 0px lightgray;
+}
+.doingBody .card:hover{
+    box-shadow: 0px 0px 10px 0px lightgray;
+}
+.doingBody .card img{
+    width: 65px;
+    margin: 10px;
+}
+
+/* Mission and Projects */
+
+.missonContainer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #316DC3;
+    flex-direction: row;
+    align-items: center;    
+    margin-bottom: 20px;
+    justify-content: center; 
+}
+.missonContainer #mission{
+    width: 700px;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#mission h3{
+    font-size: 20px;
+    color: #316DC3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS' , Arial, Helvetica, sans-serif;
+}
+.missonContainer #missionBottom{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.missonContainer #missionBottom .missionCards{
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    color: #316DC3;
+    font-weight: bolder;        
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 1px 0px rgba(128, 128, 128, 0.678) inset;
+}
+.missionCards img{
+    margin-right: 20px;
+}
+.missonContainer #events{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    padding: 10px;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#events div{
+    height: 170px;
+    border-top: 1px solid lavender;
+}
+#events div marquee{
+    height: 100%;
+    padding: 10px;
+    color: #000; 
+    font-family: 'Open Sans', sans-serif;
+}
+#events div marquee span{
+    color: black; 
+    font-weight: bold;
+}
+#events div marquee span b{
+    color: maroon; 
+    font-size: larger;
+}
+#events div marquee a{
+    color: lime;
+}
+
+/* image gallery */
+
+.imgGallery{
+    background-color: white;
+}
+.imgBody{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.imgBody img{
+    margin:5px;
+    width: 200px;
+    position: relative;
+    transition: 0.5s;
+}
+.imgBody img:hover{
+    z-index: 222;
+    box-shadow: 0px 0px 5px 0px #323232;
+    transform: scale(1.1);
+}
+
+/* Footer styling */
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ccc;
+}
+footer>#footerTop{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    flex-direction: row;
+    background-color: #24282d;
+    justify-content: space-around;
+}
+footer>#footerTop>div{
+    margin: 20px;    
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;    
+    align-items: left;
+    justify-content: top;
+    flex-direction: column;
+}
+footer>#footerTop>div:first-child address{
+    margin-bottom: 10px;
+}
+footer>#footerTop div:first-child a{
+    color: lightgray;
+    text-decoration: none;
+    font-family: monospace;
+}
+footer>#footerTop>div h3{
+    color: lightgray;
+    font-family: 'Times New Roman', Times, serif;
+}
+footer>#footerTop>div:nth-child(2){
+    width: 300px;   
+    overflow: hidden; 
+}
+.line{
+    width: 100%;
+    height: 2px;
+    margin: 0 !important;
+    padding: 0  !important;
+    margin-top: 5px !important;
+    background-color: lightgray;
+}
+.line>.innerLine{
+   width: 50px;
+   height: 2px;
+   background-color: limegreen; 
+}
+footer>#footerBottom{
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: smaller;
+    letter-spacing: 2px;
+    background-color: #316DC3;
+}
+footer>#footerBottom p{
+    margin-left: 5%;
+}
+/* Media Querry FOR Responsive Web*/
+@media screen and (max-width:963px){
+   nav{
+       display: none;
+   }
+    #menuIco{
+        display: block !important;
+        margin-right: 5px;
+    }
+    .navContainer{
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width:600px){
+    #slider{
+        height: 300px;
+    }
+}
+@media screen and (max-width:300px){
+    .intoHead>h1{
+        font-size: small !important;
+    }
+    #slider{
+        height: 150px;
+    }
+    .intoBody p{
+        font-size: smaller!important;
+    }
+    .doingHead h1 , .imgHead h1 , .intoHead h1{
+        font-size: xx-small !important;
+    }
+    .doingHead img , .imgHead img  , .intoHead img{
+        width: 20px !important;
+        margin-top: 10px;
+    }
+    .doingBody .card{
+        height: 80px;
+         font-size: xx-small !important;
+    }
+    .doingBody .card img{
+        width: 25px;
+    }
+}
+@media screen and (max-width:365px){
+    #mission h3{
+        font-size: 15px;
+    }
+    .missonContainer #mission{
+        width: 300px;
+    }
+    .missonContainer #missionBottom .missionCards{
+        width: 200px;
+    }
+    .doingHead h1 , .imgHead h1 , .intoHead h1{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:238px){
+    .missonContainer{
+        padding: 0;
+    }
+    #mission{
+        padding: 0;
+    }
+    #missionBottom{
+        width: 100%;
+    }
+    .missionCards{
+        padding: 0;
+        width: 100%;
+    }
+    .missionCards img{
+        width: 20px;
+        margin: 0;
+    }
+    .missionCards p{
+        font-size: 8px;
+    }
+    .missonContainer #mission{
+        width: 100%;
+    }
+    .countInfoContainer div{
+        width: 100%;
+    }
+    .countInfoContainer div h1{
+        font-size: smaller;
+    }
+    .countInfoContainer div p{
+        font-size: 10px;
+    }
+    .navContainer img{
+        width: 50% !important;
+    }
+    #menuIco{
+        width: 20px !important;
+    }
+}
+@media screen and (max-width:278px){
+    header>div.btnContainer button{
+        width: 100%;
+        margin: 2px;
+    }
+    .navContainer>img{
+        width: 100px;
+    }
+}
+@media screen and (max-width:900px){
+    .countInfoContainer{
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:427px){
+    .imgBody img{
+        width: 100%;
+        margin: 10px;
+    }
+}
+@media screen and (max-width:209px){
+    footer>#footerTop>div:first-child address{
+        font-size: xx-small;
+    }
+    footer>#footerTop div:first-child a{
+        font-size: xx-small !important;
+    }
+    footer>#footerTop>div h3{
+        font-size: xx-small;
+    }    
+    #footerBottom p{
+        font-size: xx-small;
+    }
+}
+@media screen and (max-width:133px){
+    footer>#footerTop>div:first-child address{
+        font-size: 7px;
+    }
+    footer>#footerTop div:first-child a{
+        font-size: 7px !important;
+    }
+    footer>#footerTop>div h3{
+        font-size: 10px;
+    }    
+    #footerBottom p{
+        font-size: 7px;
+    }
+}
